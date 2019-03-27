@@ -3,6 +3,7 @@ import MyCard from './../MyCard/MyCard.js';
 import OpponentCard from './../OpponentCard/OpponentCard.js';
 import "./MainGame.css";
 import OpponentScore from '../../OpponentScore/OpponentScore.js';
+import MyScore from "./../MyScore/MyScore.js";
 
 
 class MainGame extends Component {
@@ -10,7 +11,7 @@ class MainGame extends Component {
         super();
         this.state = {
             opponentLife: 100,
-            myLife: ""
+            myLife: 100
 
         }
         
@@ -28,9 +29,12 @@ class MainGame extends Component {
                 />
                 <MyCard
                     userChoice={this.props.userChoice}
-                    className="myCard"
-                    
-                 />
+                
+                />
+                <MyScore
+                    myLife={this.state.myLife}    
+
+                />
             </div>
         )
     }
