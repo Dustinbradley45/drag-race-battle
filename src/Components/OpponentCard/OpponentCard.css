@@ -1,0 +1,36 @@
+.opponentCardWrapper {
+    width: 400px;
+    height: 40vh;
+    align-self:flex-end;
+    animation: slideLeft 1s linear;
+    /* background-color:white; */
+    box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.75);
+    margin-top:5vh;
+    text-align:center
+   
+}
+
+.opponentCardWrapper h2 {
+    font-size: 2rem;
+}
+
+.opponentCardImageWrapper {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.opponentCardImageWrapper img {
+    max-height: 300px;
+    object-fit: cover;
+    object-position:top;
+    width: 100%;
+}
+
+@keyframes slideLeft {
+    0%{
+        transform:translateX(-400px)
+    }
+    100% {
+        transform: translateX(0)
+    }
+}
