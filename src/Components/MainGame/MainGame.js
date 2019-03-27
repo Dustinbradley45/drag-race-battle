@@ -58,7 +58,7 @@ class MainGame extends Component {
 
                })
            }
-       }, 1000);
+       }, 400);
     }
 
     
@@ -80,7 +80,7 @@ class MainGame extends Component {
 
                 })
             }
-        }, 1000);
+        }, 400);
         
         setTimeout(() => {
             this.opponentAttack();
@@ -129,7 +129,12 @@ class MainGame extends Component {
                             />
                           
                         </React.Fragment>
-                        :<GameOver/>
+                        : <GameOver
+                            myScore={this.state.myLife}
+                            opponentScore={this.state.opponentLife}
+                            startGame={this.props.startGame}
+                            tryAgain={this.props.tryAgain}
+                        />
                 }
             </div>
         )

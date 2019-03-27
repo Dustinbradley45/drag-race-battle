@@ -15,6 +15,7 @@ class App extends Component {
       allQueensData: [],
       dragPicker: '',
       mainGameDirection: false,
+      tryAgain:true,
 
     }
   }
@@ -49,29 +50,40 @@ class App extends Component {
 
   startGame = (event) => {
     this.setState({
-      mainGameDirection:true
+      mainGameDirection:!this.state.mainGameDirection
     })
   }
+  // tryAgain = () => {
+  //   this.setState({
+  //     tryAgain: 
+  //   })
+  // }
 
   render() {
+    // {/* this.state.tryAgain === true ? */}
     return (
       <Router>
         <div className="App">
           
-          {this.state.mainGameDirection === false ?
-            <StartGame
-              allDragQueens={this.state.allDragQueens}
-              onChangeHandler={this.onChangeHandler}
-              startGame={this.startGame}
-            />
+          {
+            
+              this.state.mainGameDirection === false ?
+                <StartGame
+                  allDragQueens={this.state.allDragQueens}
+                  onChangeHandler={this.onChangeHandler}
+                  startGame={this.startGame}
+                />
 
-            :
+                :
 
-              <MainGame
-              userChoice={this.state.dragPicker}
-              allQueensData={this.state.allQueensData}
-              // opponentChoice={this.state.opponentChoice}
-            />
+                <MainGame
+                  userChoice={this.state.dragPicker}
+                  allQueensData={this.state.allQueensData}
+                  // opponentChoice={this.state.opponentChoice}
+                  tryAgain={this.tryAgain}
+            
+                />
+         
         }
         </div>
       </Router>
