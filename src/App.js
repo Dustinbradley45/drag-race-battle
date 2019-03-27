@@ -15,8 +15,6 @@ class App extends Component {
       allQueensData: [],
       dragPicker: '',
       mainGameDirection: false,
-      opponentLife: '',
-      myLife: '',
 
     }
   }
@@ -25,7 +23,6 @@ class App extends Component {
     axios.get('http://www.nokeynoshade.party/api/queens/all', {
       params: {
         method: "GET",
-        // name: "Trixie Mattel",
       }
     }).then((res => {
       const allResponse = res.data;

@@ -5,6 +5,7 @@ import "./MainGame.css";
 import OpponentScore from '../../OpponentScore/OpponentScore.js';
 import MyScore from "./../MyScore/MyScore.js";
 import MyAttacks from "./../MyAttacks/MyAttacks.js";
+import GameOver from "./../GameOver/GameOver.js";
 
 
 class MainGame extends Component {
@@ -14,7 +15,8 @@ class MainGame extends Component {
             opponentLife: 10,
             myLife: 10,
             randomLifeNumber: "",
-            turnDirector:"user"
+            turnDirector: "user",
+            redirectToEnd: false
 
         }
         
@@ -40,6 +42,24 @@ class MainGame extends Component {
 //         <h2>Your eyelash on straight? You missed! No points lost.</h2>
 //     }
 // }
+    
+    opponentAttack = () => {
+        const opponentAttackNumber = Math.floor(Math.random() * 4) + 1;
+
+        this.setState({
+            myLife: this.state.myLife - opponentAttackNumber,
+            turnDirector: "user"
+        })
+
+       setTimeout(() => {
+           if (this.state.myLife <= 0) {
+               this.setState({
+                   redirectToEnd: true,
+
+               })
+           }
+       }, 1000);
+    }
 
     
 
@@ -53,6 +73,19 @@ class MainGame extends Component {
               turnDirector: "computer"
           })
         
+        setTimeout(() => {
+            if (this.state.opponentLife <= 0) {
+                this.setState({
+                    redirectToEnd: true,
+
+                })
+            }
+        }, 1000);
+        
+        setTimeout(() => {
+            this.opponentAttack();
+        }, 1000);
+        
         
 
       }
@@ -60,33 +93,44 @@ class MainGame extends Component {
 
  
 
-      
-
-    
         return (
             <div className="gameBoard wrapper">
+                {
+                    this.state.redirectToEnd === false ?
+                        
+                    <React.Fragment>
+                        <div className="whosTurn">
+                            {
+                                this.state.turnDirector === "user" ?
+                                    <h3>It's your Turn!</h3> :
+                                    <h3>It's your Opponents Turn!</h3>
+                            }
+                        </div>
                
-                <OpponentCard
-                    allQueensData={this.props.allQueensData}
-                    // opponentChoice={this.props.opponentChoice}
-                />
+                        <OpponentCard
+                            allQueensData={this.props.allQueensData}
+                        />
 
-                <OpponentScore
-                    opponentLife={this.state.opponentLife}
-                    attack={this.state.randomLifeNumber}
-                />
-                <MyCard
-                    userChoice={this.props.userChoice}
+                        <OpponentScore
+                            opponentLife={this.state.opponentLife}
+                            attack={this.state.randomLifeNumber}
+                        />
+                        <MyCard
+                            userChoice={this.props.userChoice}
                 
-                />
-                <MyScore
-                    myLife={this.state.myLife}    
+                        />
+                        <MyScore
+                            myLife={this.state.myLife}
 
-                />
-                <MyAttacks 
-                    loseOpponentLife={this.loseOpponentLife}
-                    changeTurn={this.state.turnDirector}
-                />
+                        />
+                        <MyAttacks
+                            loseOpponentLife={this.loseOpponentLife}
+                            changeTurn={this.state.turnDirector}
+                            />
+                          
+                        </React.Fragment>
+                        :<GameOver/>
+                }
             </div>
         )
     }
