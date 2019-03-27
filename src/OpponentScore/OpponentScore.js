@@ -1,20 +1,15 @@
-import React, { Component } from "react";
+import React from "react";
 import "./OpponentScore.css";
 
-class OpponentScore extends Component {
-    constructor() {
-        super();
-        this.state = {
-           
-        }
-    }
-    render() {
+const OpponentScore = (props) => {
+    const newLife = props.OpponentLife
+ 
         return (
             <div className="opponentLifeWrapper">
-                <h2>{this.props.opponentLife}</h2>
+                <h2>{props.opponentLife}</h2>
             </div>
         )
     }
-}
+
 
 export default OpponentScore;

@@ -1,6 +1,5 @@
 .opponentCardWrapper {
     width: 400px;
-    height: 40vh;
     align-self:flex-end;
     animation: slideLeft 1s linear;
     /* background-color:white; */
@@ -20,7 +19,7 @@
 }
 
 .opponentCardImageWrapper img {
-    max-height: 300px;
+    max-height: 250px;
     object-fit: cover;
     object-position:top;
     width: 100%;

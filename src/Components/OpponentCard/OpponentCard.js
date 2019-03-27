@@ -20,7 +20,6 @@ class OpponentCard extends Component {
         this.setState({
             randomNumber: randomNumber
         })
-        console.log(randomNumber)
         return randomNumber;
         
     }
@@ -35,7 +34,6 @@ class OpponentCard extends Component {
          this.setState({
             opponentChoice : opponent
          })
-         console.log(opponent, "am I undefined")
     }
 
     // maybe call this elseweher
@@ -45,7 +43,6 @@ class OpponentCard extends Component {
     }
     render() { 
         const opponentData = this.state.opponentChoice
-        console.log(opponentData.name)
         
         return (
             <div className="opponentCardWrapper">
