@@ -61,7 +61,9 @@ class MainGame extends Component {
        }, 400);
     }
 
-    
+    startGame = () => {
+        console.log("clicked")
+    }
 
       
     loseOpponentLife = (e) => {
@@ -128,7 +130,7 @@ class MainGame extends Component {
                             changeTurn={this.state.turnDirector}
                             />
                           
-                        </React.Fragment>
+                    </React.Fragment>
                         : <GameOver
                             myScore={this.state.myLife}
                             opponentScore={this.state.opponentLife}

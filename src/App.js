@@ -68,20 +68,26 @@ class App extends Component {
           {
             
               this.state.mainGameDirection === false ?
-                <StartGame
+              <Route
+                path="/"
+                render={() => 
+                  <StartGame
                   allDragQueens={this.state.allDragQueens}
                   onChangeHandler={this.onChangeHandler}
                   startGame={this.startGame}
-                />
+                  />
+                }
+              />
 
                 :
 
-                <MainGame
+              <Route path="/MainGame"
+                render={() => <MainGame 
                   userChoice={this.state.dragPicker}
                   allQueensData={this.state.allQueensData}
-                  // opponentChoice={this.state.opponentChoice}
                   tryAgain={this.tryAgain}
-            
+                  
+                />}
                 />
          
         }

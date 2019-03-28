@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Link } from "react-router-dom";
 import "./GameOver.css";
 
 const GameOver = (props) => {
@@ -10,7 +11,8 @@ const GameOver = (props) => {
                     <h2>Sorry Henny, you lost.</h2> :
                     <h2>You Won! Guess you are a superstar.</h2>
             }
-            <button onClick={props.startGame}>Wanna Try Again?</button>
+            {/* <Link to='/'>Hello World</Link> */}
+            
         </div>
     )
 }
