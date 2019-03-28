@@ -48,16 +48,15 @@ class App extends Component {
     })
   }
 
-  startGame = (event) => {
-    this.setState({
-      mainGameDirection:!this.state.mainGameDirection
-    })
-  }
-  // tryAgain = () => {
-  //   this.setState({
-  //     tryAgain: 
-  //   })
-  // }
+    startGame = (event) => {
+        this.setState({
+          mainGameDirection: !this.state.mainGameDirection
+        })  
+    } 
+
+
+
+  
 
   render() {
     // {/* this.state.tryAgain === true ? */}

@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import MyCard from './../MyCard/MyCard.js';
+import MyCard from '../MyCard/MyCard.js';
 import OpponentCard from './../OpponentCard/OpponentCard.js';
 import "./MainGame.css";
-import OpponentScore from '../../OpponentScore/OpponentScore.js';
-import MyScore from "./../MyScore/MyScore.js";
-import MyAttacks from "./../MyAttacks/MyAttacks.js";
+import OpponentBattleInfo from "./../OpponentCard/OpponentBattleInfo/OpponentBattleInfo.js";
+import OpponentScore from '../OpponentCard/OpponentScore/OpponentScore.js';
+import MyScore from "../MyCard/MyScore/MyScore.js";
+import MyBattleInfo from "../MyCard/MyBattleInfo/MyBattleInfo.js";
+import MyAttacks from "../MyCard/MyAttacks/MyAttacks.js";
 import GameOver from "./../GameOver/GameOver.js";
 
 
@@ -61,11 +63,6 @@ class MainGame extends Component {
        }, 400);
     }
 
-    startGame = () => {
-        console.log("clicked")
-    }
-
-      
     loseOpponentLife = (e) => {
           const getRanNumber = Math.floor(Math.random() * 4) + 1;
           
@@ -116,11 +113,18 @@ class MainGame extends Component {
                         <OpponentScore
                             opponentLife={this.state.opponentLife}
                             attack={this.state.randomLifeNumber}
+                            />
+                            <OpponentBattleInfo 
+                                
                         />
                         <MyCard
                             userChoice={this.props.userChoice}
                 
                         />
+                        <MyBattleInfo
+
+                            />
+                            
                         <MyScore
                             myLife={this.state.myLife}
 

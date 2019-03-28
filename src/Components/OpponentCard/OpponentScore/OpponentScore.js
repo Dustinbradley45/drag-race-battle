@@ -5,7 +5,7 @@ const OpponentScore = (props) => {
  
         return (
             <div className="opponentLifeWrapper">
-                <h2>{props.opponentLife}</h2>
+                <h2>Slay Points: {props.opponentLife}</h2>
             </div>
         )
     }
