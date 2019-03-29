@@ -1,12 +1,20 @@
+.opponentCardContainer {
+display:flex;
+flex-direction:row;
+justify-content: space-between;
+width:100%;
+
+}
+
 .opponentCardWrapper {
     width: 400px;
     align-self:flex-end;
     animation: slideLeft 1s linear;
-    /* background-color:white; */
     box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.75);
     margin-top:5vh;
     text-align:center;
     transform: translateY(70px);
+    
    
 }
 

@@ -18,7 +18,7 @@ class MainGame extends Component {
             myLife: 10,
             randomLifeNumber: "",
             turnDirector: "user",
-            redirectToEnd: false
+            redirectToEnd: false,
 
         }
         
@@ -88,58 +88,59 @@ class MainGame extends Component {
         
 
       }
-    render() {
-
+      render() {
+        const { loseOpponentLife } = this;
+        const { redirectToEnd, turnDirector, opponentLife, randomLifeNumber, myLife, opponentChoice } = this.state;
+        const { allQueensData, userChoice, startGame, tryAgain } = this.props;
  
 
         return (
             <div className="gameBoard wrapper">
                 {
-                    this.state.redirectToEnd === false ?
+                    redirectToEnd === false ?
                         
                     <React.Fragment>
                         <div className="whosTurn">
                             {
-                                this.state.turnDirector === "user" ?
+                                turnDirector === "user" ?
                                     <h3>It's your Turn!</h3> :
                                     <h3>It's your Opponents Turn!</h3>
                             }
                         </div>
                
                         <OpponentCard
-                            allQueensData={this.props.allQueensData}
+                                allQueensData={allQueensData}
+                                //  opponentChoice={opponentChoice}
                         />
 
                         <OpponentScore
-                            opponentLife={this.state.opponentLife}
-                            attack={this.state.randomLifeNumber}
+                            opponentLife={opponentLife}
+                            attack={randomLifeNumber}
                             />
-                            <OpponentBattleInfo 
-                                
-                        />
+                           
                         <MyCard
-                            userChoice={this.props.userChoice}
+                            userChoice={userChoice}
                 
                         />
                         <MyBattleInfo
-
+                             userChoice={userChoice}
                             />
                             
                         <MyScore
-                            myLife={this.state.myLife}
+                            myLife={myLife}
 
                         />
                         <MyAttacks
-                            loseOpponentLife={this.loseOpponentLife}
-                            changeTurn={this.state.turnDirector}
+                            loseOpponentLife={loseOpponentLife}
+                            changeTurn={turnDirector}
                             />
                           
                     </React.Fragment>
                         : <GameOver
-                            myScore={this.state.myLife}
-                            opponentScore={this.state.opponentLife}
-                            startGame={this.props.startGame}
-                            tryAgain={this.props.tryAgain}
+                            myScore={myLife}
+                            opponentScore={opponentLife}
+                            startGame={startGame}
+                            tryAgain={tryAgain}
                         />
                 }
             </div>

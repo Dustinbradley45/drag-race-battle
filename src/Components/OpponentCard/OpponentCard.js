@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import "./OpponentCard.css";
+import OpponentBattleInfo from "./OpponentBattleInfo/OpponentBattleInfo";
 import axios from 'axios';
 
  
@@ -11,7 +12,9 @@ class OpponentCard extends Component {
         super();
         this.state = {
             randomNumber: '',
-            opponentChoice:"",
+            opponentChoice: "",
+
+          
         }
     }
 
@@ -32,7 +35,7 @@ class OpponentCard extends Component {
 
        })
          this.setState({
-            opponentChoice : opponent
+             opponentChoice: opponent,
          })
     }
 
@@ -45,12 +48,22 @@ class OpponentCard extends Component {
         const opponentData = this.state.opponentChoice
         
         return (
+            <div className="opponentCardContainer">
+                <div className="opponentBattleInfoContainer">
+                 <OpponentBattleInfo 
+                    opponentQuote={opponentData.quote}       
+                        />
+
+                </div>
+
+          
             <div className="opponentCardWrapper">
                 <h2>{opponentData.name}</h2>
                 <div className="opponentCardImageWrapper">
                     <img src={opponentData.image_url} alt={opponentData.name}/>
                 </div>
-            </div>
+                </div>
+                  < /div>
         )
     }
     

@@ -7,6 +7,7 @@
     box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.75);
     padding: 5rem 0;
     margin-top:15%;
+    animation: mainSlideIn 1s ease;
 }
 
 .instructionTextBox a {
@@ -22,4 +23,121 @@
 .instuctionTextBox a:focus,
 .instructionTextBox a:active {
     color: rgba(255,255,255, .6);
+}
+
+.ruPaulContainer {
+    width: 30%;
+    position:absolute;
+    right:0;
+    bottom:0;
+    animation: ruPaulSlide 1s ease;
+}
+
+.ruPaulContainer img {
+    width: 100%;
+}
+
+.speechBubble {
+    width: 200px;
+    height: 100px;
+    border-radius: 100%;
+    background-color:silver;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items:center;
+    position:absolute;
+    right:220px;
+    top:175px;
+    animation: fadeIn 1.2s ease;
+    background-color:rgba(255, 11, 197, 1);
+    border:1px solid black;
+    text-align:center;
+
+
+}
+
+.speechBubble p {
+    text-transform:uppercase;
+    font-weight:600;
+}
+
+.speechBubble::before {
+    content:'';
+    width: 30px;
+    height:30px;
+    position:absolute;
+    display:block;
+    border-radius:100%;
+    bottom:-20px;
+    left:50px;
+    animation: fadeIn 1.4s ease;
+    background-color:rgba(255, 11, 197, 1);
+    border:1px solid black;
+
+}
+
+.speechBubble::after {
+    content:'';
+    width: 20px;
+    height: 20px;
+    position:absolute;
+    display:block;
+    border-radius:100%;
+    bottom:-40px;
+    left:60px;
+    animation: fadeIn 1.6s ease;
+    background-color:rgba(255, 11, 197, 1);
+    border:1px solid black;
+
+}
+
+.flags {
+    width:425px;
+    position:absolute;
+    top:0;
+    z-index:-1;
+}
+
+.flags img {
+    width:100%;
+
+}
+
+@keyframes mainSlideIn {
+    0% {
+        opacity:0;
+        transform:translateX(-1000px)
+    }
+    20% {
+        opacity:1
+    }
+   
+    70% {
+        transform:translateX(50px)
+    }
+    100% {
+        transform:translateX(0)
+    }
+}
+
+@keyframes ruPaulSlide {
+    0% {
+        transform:translateY(1000px);
+    }
+
+    100% {
+        transform:translateY(0);
+    }
+}
+
+/* FOR SPEECHBUBBLE */
+
+@keyframes fadeIn {
+    0% {
+        transform:translateX(4000px)
+    }
+    100% {
+        transform:translateX(0)
+    }
 }
