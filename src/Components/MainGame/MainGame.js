@@ -23,27 +23,6 @@ class MainGame extends Component {
         }
         
     }
-
-//     checkAttack = () => {
-//     if (this.state.randomLifeNumber === 1) {
-//         <h2>Critical Hit! Lose 30 Slay Points Henny.</h2>
-//         this.setState({
-//             opponentLife: this.state.opponentLife - 30
-//         });
-//     } else if (this.state.randomLifeNumber === 2) {
-//         <h2>Lose 20 Slay Points Squirrelfriend.</h2>
-//         this.setState({
-//             opponentLife: this.state.opponentLife - 20
-//         });
-//     } else if (this.state.randomLifeNumber === 3) {
-//         <h2>Ahh! Near miss. Lose 10 Slay Points.</h2>
-//         this.setState({
-//             opponentLife: this.state.opponentLife - 10
-//         });
-//     } else {
-//         <h2>Your eyelash on straight? You missed! No points lost.</h2>
-//     }
-// }
     
     opponentAttack = () => {
         const opponentAttackNumber = Math.floor(Math.random() * 4) + 1;
@@ -89,7 +68,7 @@ class MainGame extends Component {
 
       }
       render() {
-        const { loseOpponentLife } = this;
+        const { loseOpponentLife, opponentAttack } = this;
         const { redirectToEnd, turnDirector, opponentLife, randomLifeNumber, myLife, opponentChoice } = this.state;
         const { allQueensData, userChoice, startGame, tryAgain } = this.props;
  
@@ -110,7 +89,8 @@ class MainGame extends Component {
                
                         <OpponentCard
                                 allQueensData={allQueensData}
-                                //  opponentChoice={opponentChoice}
+                                randomLifeNumber={randomLifeNumber}
+                                opponentAttack={opponentAttack}
                         />
 
                         <OpponentScore
@@ -120,12 +100,10 @@ class MainGame extends Component {
                            
                         <MyCard
                             userChoice={userChoice}
+                            randomLifeNumber={randomLifeNumber}
                 
                         />
-                        <MyBattleInfo
-                             userChoice={userChoice}
-                            />
-                            
+                       
                         <MyScore
                             myLife={myLife}
 

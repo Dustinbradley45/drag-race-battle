@@ -1,7 +1,18 @@
-.myBattleInfoWrapper {
-    position:absolute;
-    right:0;
-    bottom:0;
-    transform:translateX(-400px)translateY(-200px);
+.battleInfoContainer {
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items:center;
+    margin-left:2rem;
+    padding: 1rem;
 
 }
+
+.myBattleInfoWrapper {
+
+    padding:1rem;
+    
+
+}
+
+

@@ -1,3 +1,10 @@
+.myCardContainer {
+    display:flex;
+    flex-direction:row;
+    justify-content: flex-start;
+
+}
+
 .myCardWrapper {
     width: 400px;
     /* background: white; */
@@ -24,6 +31,8 @@
     object-fit: cover;
     width: 100%;
 }
+
+
 @keyframes slideRight {
     0% {
         transform: translateX(400px)

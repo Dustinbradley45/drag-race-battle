@@ -19,7 +19,7 @@ class OpponentCard extends Component {
     }
 
     getRanNum = () => {
-        let randomNumber = Math.floor(Math.random() * 100) + 1;
+        let randomNumber = Math.floor(Math.random() * 90) + 1;
         this.setState({
             randomNumber: randomNumber
         })
@@ -39,31 +39,33 @@ class OpponentCard extends Component {
          })
     }
 
-    // maybe call this elseweher
     componentDidMount() {
          this.getOpponent(this.getRanNum())
         
     }
     render() { 
         const opponentData = this.state.opponentChoice
+        const { opponentAttack } = this.props;
         
         return (
             <div className="opponentCardContainer">
                 <div className="opponentBattleInfoContainer">
                  <OpponentBattleInfo 
-                    opponentQuote={opponentData.quote}       
+                        opponentQuote={opponentData.quote}
+                        opponentName={opponentData.name}
+                        opponentAttack={opponentAttack}
                         />
 
                 </div>
 
           
-            <div className="opponentCardWrapper">
-                <h2>{opponentData.name}</h2>
-                <div className="opponentCardImageWrapper">
-                    <img src={opponentData.image_url} alt={opponentData.name}/>
+                <div className="opponentCardWrapper">
+                    <h2>{opponentData.name}</h2>
+                    <div className="opponentCardImageWrapper">
+                        <img src={opponentData.image_url} alt={opponentData.name}/>
+                    </div>
                 </div>
-                </div>
-                  < /div>
+            </div>
         )
     }
     
