@@ -45,7 +45,7 @@ class OpponentCard extends Component {
     }
     render() { 
         const opponentData = this.state.opponentChoice
-        const { opponentAttack } = this.props;
+        const { opponentAttack, opponentAttackNumber } = this.props;
         
         return (
             <div className="opponentCardContainer">
@@ -54,6 +54,7 @@ class OpponentCard extends Component {
                         opponentQuote={opponentData.quote}
                         opponentName={opponentData.name}
                         opponentAttack={opponentAttack}
+                        opponentAttackNumber={opponentAttackNumber}
                         />
 
                 </div>

@@ -19,19 +19,27 @@ class MainGame extends Component {
             randomLifeNumber: "",
             turnDirector: "user",
             redirectToEnd: false,
+            opponentAttackNumber:"",
 
         }
         
     }
     
+    // FUNCTION FIRES AFTER CLICK OF USER BUTTON
     opponentAttack = () => {
+        // GET RANDOM NUMBER BETWEEN ONE AND 4
         const opponentAttackNumber = Math.floor(Math.random() * 4) + 1;
 
+        // SUBTRACT ATTACK FROM MY LIFE,
+        // DIRECT BACK TO USER TURN,
+        // SAVE OPPONENT ATTACK TO USE IN OPPONENT BATTLE INFO COMPONENT
         this.setState({
             myLife: this.state.myLife - opponentAttackNumber,
-            turnDirector: "user"
+            turnDirector: "user",
+            opponentAttackNumber:opponentAttackNumber
         })
 
+        // IF MY LIFE IS LESS THAN OR EQUAL TO 0 THEN END GAME
        setTimeout(() => {
            if (this.state.myLife <= 0) {
                this.setState({
@@ -42,34 +50,39 @@ class MainGame extends Component {
        }, 400);
     }
 
+    // ON CLICK OF ATTACK BUTTON GET RANDOM NUMBER BETWEEN 1 and 4
     loseOpponentLife = (e) => {
           const getRanNumber = Math.floor(Math.random() * 4) + 1;
           
+        // SET STATE FOR RANDOM LIFE NUMBER ,
+        // SUBTRACT  RANDOM LIKEF NUMBER FROM OPPONENT LIFE,
+        // GO TO COMPUTER
           this.setState({
               randomLifeNumber: getRanNumber,
               opponentLife: this.state.opponentLife - getRanNumber,
               turnDirector: "computer"
           })
         
+        // IF OPPONENT LIFE = 0 THEN END GAME
         setTimeout(() => {
             if (this.state.opponentLife <= 0) {
                 this.setState({
                     redirectToEnd: true,
-
                 })
             }
         }, 400);
         
+        // CALL OPPONENT ATTACK
         setTimeout(() => {
             this.opponentAttack();
-        }, 1000);
+        }, 2000);
         
         
 
       }
       render() {
         const { loseOpponentLife, opponentAttack } = this;
-        const { redirectToEnd, turnDirector, opponentLife, randomLifeNumber, myLife, opponentChoice } = this.state;
+        const { redirectToEnd, turnDirector, opponentLife, randomLifeNumber, myLife, opponentAttackNumber } = this.state;
         const { allQueensData, userChoice, startGame, tryAgain } = this.props;
  
 
@@ -86,33 +99,39 @@ class MainGame extends Component {
                                     <h3>It's your Opponents Turn!</h3>
                             }
                         </div>
-               
-                        <OpponentCard
+                            <div className="opponentSide">
+                                 <OpponentCard
                                 allQueensData={allQueensData}
                                 randomLifeNumber={randomLifeNumber}
                                 opponentAttack={opponentAttack}
-                        />
-
-                        <OpponentScore
-                            opponentLife={opponentLife}
-                            attack={randomLifeNumber}
+                                opponentAttackNumber={opponentAttackNumber}
                             />
-                           
-                        <MyCard
-                            userChoice={userChoice}
-                            randomLifeNumber={randomLifeNumber}
-                
-                        />
+
+                            <OpponentScore
+                                opponentLife={opponentLife}
+                                attack={randomLifeNumber}
+                                />
+                        </div>
                        
-                        <MyScore
-                            myLife={myLife}
+                            <div className="mySide">
+                                <div className="mySideBody">
+                                    <MyCard
+                                        userChoice={userChoice}
+                                        randomLifeNumber={randomLifeNumber}
+                    
+                                    />
+                            
+                                    <MyScore
+                                        myLife={myLife}
+                                    />
+                                </div>
 
-                        />
-                        <MyAttacks
-                            loseOpponentLife={loseOpponentLife}
-                            changeTurn={turnDirector}
-                            />
-                          
+                                <MyAttacks
+                                    loseOpponentLife={loseOpponentLife}
+                                    changeTurn={turnDirector}
+                                />
+                           </div>
+                       
                     </React.Fragment>
                         : <GameOver
                             myScore={myLife}

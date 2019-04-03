@@ -21,3 +21,34 @@
     margin:0;
     
 }
+
+.opponentSide,
+.mySide {
+    width: 100%;
+
+
+}
+
+.opponentSide {
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items:center;
+    height: calc(50vh -400px);
+    outline:4px solid red;
+
+}
+
+.mySide {
+    height: 50vh;
+    display:flex;
+    flex-direction:column;
+    outline: 4px solid blue;
+}
+
+.mySideBody {
+    display:flex;
+    flex-direction:row;
+    justify-content: flex-start;
+    align-items:center;
+}
