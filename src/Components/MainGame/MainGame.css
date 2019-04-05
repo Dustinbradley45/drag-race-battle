@@ -11,9 +11,13 @@
 }
 
 .whosTurn {
+    font-size:1rem;
     position:absolute;
-    top:0;
-    left:0;
+    top: 1rem;
+    left: 1rem;
+    background: rgba(168, 0, 246, 0.8);
+    box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.75);
+    padding:1rem;
 }
 
 .whosTurn h3 {
@@ -25,6 +29,7 @@
 .opponentSide,
 .mySide {
     width: 100%;
+    padding:2rem;
 
 
 }
@@ -35,7 +40,6 @@
     justify-content: flex-start;
     align-items:center;
     height: calc(50vh -400px);
-    outline:4px solid red;
 
 }
 
@@ -43,7 +47,6 @@
     height: 50vh;
     display:flex;
     flex-direction:column;
-    outline: 4px solid blue;
 }
 
 .mySideBody {

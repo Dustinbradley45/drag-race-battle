@@ -1,15 +1,28 @@
+.opponentBattleInfoContainer {
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+    width:50%;
+    
+}
 .opponentBattleInfoWrapper {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 40%;
     box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.75);
     background-color:rgba(255, 11, 197, .6);
     text-align:center;
+    width:70%;
+    padding:2rem;
+    
+    
     
 }
 
-.opponentBattleInfoWrapper {
-    font-size:20px;
+.opponentBattleInfoWrapper h2 {
+    font-size: 20px;
+
 }

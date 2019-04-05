@@ -1,8 +1,8 @@
 .myCardContainer {
     display:flex;
     flex-direction:row;
-    justify-content: flex-start;
-    outline:4px orange solid;
+    justify-content: center;
+
     align-items:center;
     width:100%;
 
@@ -10,24 +10,29 @@
 
 .myCardWrapper {
     width: 400px;
-    /* background: white; */
+    margin-left:2rem;
     box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.75);
     align-self:flex-start;
     animation: slideRight 1s linear;
-
+        background: rgba(168, 0, 246, 0.8);
     text-align:center;
     height:100%;
 
 }
 
+.myCardWrapper h2 {
+    font-size:1.5rem;
+}
+
 .myCardImageWrapper {
     width: 90%;
     margin: 0 auto;
+
 }
 
-.myCardWrapper h2 {
+/* .myCardWrapper h2 {
     font-size:2rem;
-}
+} */
 
 .myCardImageWrapper img {
     max-height: 200px;
