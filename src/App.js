@@ -3,7 +3,7 @@ import StartGame from './Components/StartGame/StartGame.js'
 import MainGame from './Components/MainGame/MainGame.js'
 import './App.css';
 import axios from 'axios';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 
 
 class App extends Component {
@@ -61,37 +61,30 @@ class App extends Component {
   render() {
     // {/* this.state.tryAgain === true ? */}
     return (
-      <Router>
+  
         <div className="App">
           
           {
             
               this.state.mainGameDirection === false ?
-              <Route
-                path="/"
-                render={() => 
+            
                   <StartGame
                   allDragQueens={this.state.allDragQueens}
                   onChangeHandler={this.onChangeHandler}
                   startGame={this.startGame}
                   />
-                }
-              />
-
+            
                 :
 
-              <Route path="/MainGame"
-                render={() => <MainGame 
+               <MainGame 
                   userChoice={this.state.dragPicker}
                   allQueensData={this.state.allQueensData}
                   tryAgain={this.tryAgain}
                   
-                />}
                 />
-         
         }
         </div>
-      </Router>
+    
     );
   }
 }

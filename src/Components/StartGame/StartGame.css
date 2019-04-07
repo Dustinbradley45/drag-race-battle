@@ -10,6 +10,29 @@
     animation: mainSlideIn 1s ease;
 }
 
+.startButton {
+    background: rgba(168, 0, 246, 0.8);
+    padding:.5rem;
+    margin-top:.5rem;
+    transition:.2s all linear;
+    box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.75);
+    border:none;
+    font-size:1rem;
+}
+
+.startButton:active,
+.startButton:hover,
+.startButton:focus {
+      box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 1);
+}
+
+.dragQueenPick {
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items:center;
+}
+
 .instructionTextBox a {
     color: white;
     text-decoration:none;
