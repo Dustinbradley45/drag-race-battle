@@ -19,7 +19,7 @@ class OpponentCard extends Component {
     }
 
     getRanNum = () => {
-        let randomNumber = Math.floor(Math.random() * 90) + 1;
+        let randomNumber = Math.floor(Math.random() * this.props.allDragQueens.length) + 1;
         this.setState({
             randomNumber: randomNumber
         })

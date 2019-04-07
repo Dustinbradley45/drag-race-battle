@@ -78,8 +78,10 @@ class App extends Component {
 
                <MainGame 
                   userChoice={this.state.dragPicker}
-                  allQueensData={this.state.allQueensData}
-                  tryAgain={this.tryAgain}
+              allQueensData={this.state.allQueensData}
+              allDragQueens={this.state.allDragQueens}
+              tryAgain={this.tryAgain}
+              
                   
                 />
         }

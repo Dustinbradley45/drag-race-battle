@@ -46,7 +46,7 @@ class MainGame extends Component {
                    redirectToEnd: true,
 
                })
-           }
+           } 
        }, 400);
     }
 
@@ -64,26 +64,27 @@ class MainGame extends Component {
           })
         
         // IF OPPONENT LIFE = 0 THEN END GAME
+        
         setTimeout(() => {
             if (this.state.opponentLife <= 0) {
                 this.setState({
                     redirectToEnd: true,
                 })
+            } else {
+                setTimeout(() => {
+                    this.opponentAttack();
+                }, 2000);
             }
         }, 400);
         
         // CALL OPPONENT ATTACK
-        setTimeout(() => {
-            this.opponentAttack();
-        }, 2000);
-        
         
 
       }
       render() {
         const { loseOpponentLife, opponentAttack } = this;
         const { redirectToEnd, turnDirector, opponentLife, randomLifeNumber, myLife, opponentAttackNumber } = this.state;
-        const { allQueensData, userChoice, startGame, tryAgain } = this.props;
+        const { allQueensData, userChoice, startGame, tryAgain, allDragQueens } = this.props;
  
 
         return (
@@ -101,7 +102,8 @@ class MainGame extends Component {
                         </div>
                             <div className="opponentSide">
                                  <OpponentCard
-                                allQueensData={allQueensData}
+                                    allQueensData={allQueensData}
+                                    allDragQueens={allDragQueens}
                                 randomLifeNumber={randomLifeNumber}
                                 opponentAttack={opponentAttack}
                                 opponentAttackNumber={opponentAttackNumber}

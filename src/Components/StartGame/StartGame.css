@@ -227,6 +227,40 @@
     }
 }
 
+@media(max-height:600px) and (max-width: 550px) {
+    .ruPaulContainer {
+        display:none;
+    }
+}
+
+@media(max-height:650px) {
+    .speechBubble {
+        top:36%;
+    }
+    
+    .speechBubble:after {
+        left:82px;
+
+    }
+}
+
+@media(max-width:550px) {
+    .ruPaulContainer {
+        display:none;
+    }
+}
+
+@media(max-height:700px) {
+    .ruPaulContainer {
+        width:20%;
+    }
+
+    .speechBubble {
+        right:10%;
+        top:30%
+    }
+}
+
 @media (max-width:550px) {
     .ruPaulContainer {
         width:50%;
@@ -242,3 +276,4 @@
         width:63%;
     }
 }
+
