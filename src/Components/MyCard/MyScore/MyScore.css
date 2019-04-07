@@ -12,3 +12,26 @@
         font-size:1rem;
         padding: 0.5rem;
 }
+
+@media(max-width:1150px) {
+        .slayPoints {
+                display:none;
+                padding-left: 1rem;
+                padding-right:1rem;
+        }
+
+}
+
+@media(max-width:600px) {
+        .myLifeWrapper {
+                z-index:-1;
+                left:0;
+                bottom:0;
+                font-size:.8rem;
+        }
+
+        .myLifeWrapper h2 {
+                padding:0;
+                margin:0;
+        }
+}

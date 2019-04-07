@@ -51,3 +51,32 @@
         transform: translateX(0)
     }
 }
+
+@media (max-width: 600px) {
+    .myCardContainer {
+        display:flex;
+        flex-direction:column;
+        justify-content: center;
+        align-items:center;
+    }
+
+    .myCardWrapper {
+        width:77%;
+        margin:0 auto;
+    }
+
+    .myCardWrapper h2{
+        font-size :1.25rem;
+    }
+
+    .opponentSide,
+    .mySide {
+        padding:1rem 0 !important;
+      
+    }
+
+    .mySide {
+        padding:0;
+        height:auto;
+    }
+}

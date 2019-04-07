@@ -11,7 +11,7 @@ const MyAttacks = (props) => {
                     <button data-id="1" onClick={props.loseOpponentLife}>Slay</button>
                     <button data-id="2" onClick={props.loseOpponentLife}>Werk</button>
                     <button data-id="3" onClick={props.loseOpponentLife}>Bye, Henny</button>
-                    <button data-id="4" onClick={props.loseOpponentLife}>DeathDrop</button>
+                    <button data-id="4" onClick={props.loseOpponentLife}>Death Drop</button>
                 </React.Fragment>
                     : null
             }

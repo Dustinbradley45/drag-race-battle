@@ -45,3 +45,43 @@ width:100%;
         transform: translateX(0)
     }
 }
+
+@media(max-width:700px) {
+    .opponentCardContainer {
+     
+
+    }
+
+    .opponentCardWrapper {
+        width:40%;
+    }
+}
+
+@media(max-width:600px) {
+    .opponentCardContainer {
+        display:flex;
+        flex-direction:column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .opponentBattleInfoContainer {
+        width:78% !important;
+        margin:0.5rem 0;
+    }
+    
+    .opponentCardWrapper {
+        align-self: center;
+        width:78%;
+    }
+    
+    .opponentCardWrapper h2 {
+        font-size:1.25rem;
+    }
+    
+    .opponentBattleInfoWrapper {
+        padding:0rem !important;
+        width:100% !important;
+    }
+
+}

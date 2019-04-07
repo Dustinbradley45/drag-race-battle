@@ -12,7 +12,7 @@
 
 .whosTurn {
     font-size:1rem;
-    position:absolute;
+    position:fixed;
     top: 1rem;
     left: 1rem;
     background: rgba(168, 0, 246, 0.8);
@@ -54,4 +54,13 @@
     flex-direction:row;
     justify-content: flex-start;
     align-items:center;
+}
+
+@media(max-width:600px) {
+    .whosTurn {
+        top:0;
+        left:0;
+        margin:0;
+        padding:.5rem;
+    }
 }

@@ -13,3 +13,24 @@
     font-size:1rem;
     padding:0.5rem;
 }
+
+@media(max-width:1150px) {
+    .slayPoints {
+        display: none;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+}
+
+@media(max-width:600px) {
+    .opponentLifeWrapper {
+        top:0;
+        right:0;
+    }
+    .opponentLifeWrapper h2{
+        padding:0;
+        margin:0;
+        font-size:1rem;
+    }
+}

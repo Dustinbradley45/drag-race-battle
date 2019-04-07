@@ -26,7 +26,7 @@
 }
 
 .ruPaulContainer {
-    width: 30%;
+    width: 29%;
     position:absolute;
     right:0;
     bottom:0;
@@ -139,5 +139,83 @@
     }
     100% {
         transform:translateX(0)
+    }
+}
+
+@media (max-width:1250px) {
+    .instructionTextBox {
+        width:50%;
+    }
+
+    .speechBubble {
+        right:200px;
+        top:240px;
+    }
+
+}
+
+@media(max-width:1190px) {
+    .speechBubble {
+        right:20px;
+    }
+
+    .speechBubble::before {
+        bottom:-25px;
+        left:66px;
+
+    }
+
+    .speechBubble::after {
+        bottom:-40px;
+    }
+}
+
+@media(max-width:1100px) {
+    .speechBubble {
+        top:270px;
+    }
+}
+
+@media(max-width:1000px) {
+    .speechBubble {
+        top: 230px;
+    }
+
+    .ruPaulContainer {
+        width:35%;
+    }
+}
+
+@media(max-width:900px) {
+    .speechBubble {
+        display:none;
+    }
+}
+
+@media(max-width:800px) {
+    .instructionTextBox {
+        width:75%;
+    }
+}
+
+@media (max-width:750px) {
+    .ruPaulContainer {
+        width:43%;
+    }
+}
+
+@media (max-width:550px) {
+    .ruPaulContainer {
+        width:50%;
+    }
+}
+
+@media (max-width:450px) {
+    .instructionTextBox {
+        width:95%;
+    }
+    
+    .ruPaulContainer {
+        width:63%;
     }
 }

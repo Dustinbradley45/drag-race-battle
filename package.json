@@ -2,6 +2,7 @@
   "name": "drag-race",
   "version": "0.1.0",
   "private": true,
+  "homepage":"http://www.dustinbradley.ca/DragRace",
   "dependencies": {
     "axios": "^0.18.0",
     "react": "^16.8.4",
